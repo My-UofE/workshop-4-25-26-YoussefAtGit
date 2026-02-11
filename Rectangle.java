@@ -12,12 +12,18 @@ public class Rectangle {
 
   // main constructor
   public Rectangle(double width, double height) {
-    //this.width = w;
-    //this.height = h;
-    //this.originX = oX;
-    //this.originY = oY;
-    this(width, height , 0 , 0);
+    this.width = w;
+    this.height = h;
+    this.originX = oX;
+    this.originY = oY;
+  }
 
+  public Rectangle() {
+    this(1, 1, 0, 0);
+  }
+
+  public Rectangle(double width, double height) {
+    this(width, height, 0, 0);
   }
 
   // method: move the rectangle
@@ -35,5 +41,11 @@ public class Rectangle {
   public double getPerimeter() {
     return 2 * (width + height);
   }
+
+  public void scale(double scaleX, double scaleY){
+    width = width * scaleX;
+    height = height * scaleY;
+  }
+
   
 }
