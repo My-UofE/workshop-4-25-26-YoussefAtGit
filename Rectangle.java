@@ -11,11 +11,13 @@ public class Rectangle {
   public static final int NUMBER_OF_SIDES = 4;
 
   // main constructor
-  public Rectangle(double w, double h, double oX, double oY) {
-    width = w;
-    height = h;
-    originX = oX;
-    originY = oY;
+  public Rectangle(double width, double height) {
+    //this.width = w;
+    //this.height = h;
+    //this.originX = oX;
+    //this.originY = oY;
+    this(width, height , 0 , 0);
+
   }
 
   // method: move the rectangle
