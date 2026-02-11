@@ -47,5 +47,39 @@ public class Rectangle {
     height = height * scaleY;
   }
 
-  
+  public void scale(double factor){
+    scale(factor, factor);
+  }
+
+  public boolean isOverlappedWith(Rectangle r){
+    double leftA = this.originX;
+    double rightA = this.originX + this.width;
+    double bottomA = this.originY;
+    double topA = this.originY + this.height;
+
+    double leftB = r.originX;
+    double rightB = r.originX + r.width;
+    double bottomB = r.originY;
+    double topB = r.originY + r.height;
+
+    // If separated in x or y, no overlap
+    if (rightA < leftB) return false;
+    if (rightB < leftA) return false;
+    if (topA < bottomB) return false;
+    if (topB < bottomA) return false;
+
+    return true;
+  }
+  public static boolean areOverlapping(Rectangle r1, Rectangle r2) {
+    return r1.isOverlappedWith(r2);
+  }
+
+  public double calcRatio() {
+    return width / height;
+}
+
+  public boolean isSquare() {
+    double ratio = calcRatio();
+    return ratio >= 0.999 && ratio <= 1.001;
+  }
 }
